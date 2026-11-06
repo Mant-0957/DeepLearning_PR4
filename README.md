@@ -1,203 +1,306 @@
-🧠 Deep Learning Practical Report 4 – CNN from Scratch & Transfer Learning
-📌 Project Overview
+# Deep Learning Practical 4A – CNN from Scratch: CIFAR-10 Image Classifier
 
-This project focuses on implementing and understanding Convolutional Neural Networks (CNNs) for image classification using the CIFAR-10 dataset.
+## 📌 Project Overview
 
-The practical covers fundamental deep learning concepts, including convolution operations, padding, strides, pooling, CNN architecture design, backpropagation, data augmentation, and transfer learning using MobileNetV2.
+This project implements a **Convolutional Neural Network (CNN)** using Deep Learning techniques to classify images from the CIFAR-10 dataset.
+
+The main objective is to understand how CNNs work, starting from basic convolution operations and progressing toward advanced concepts such as data augmentation and transfer learning.
+
+This practical covers six major tasks, including image preprocessing, convolution, pooling, CNN architecture development, backpropagation, data augmentation, and MobileNetV2-based transfer learning.
 
 The project is implemented using Python, TensorFlow, and Keras in a Jupyter Notebook.
 
-🎯 Objectives
-Understand the fundamentals of Convolutional Neural Networks.
-Load, explore, and preprocess the CIFAR-10 dataset.
-Implement convolution operations and understand padding and strides.
-Explore max pooling and average pooling.
-Build and train CNN architectures from scratch.
-Understand backpropagation in CNNs.
-Apply data augmentation to improve model generalization.
-Implement transfer learning using MobileNetV2.
-Compare different deep learning models based on test accuracy and parameters.
-📂 Dataset – CIFAR-10
+## 🎯 Project Objectives
 
-The project uses the CIFAR-10 dataset, which consists of 60,000 color images belonging to 10 different classes.
+- Understand the fundamentals of Convolutional Neural Networks.
+- Load and preprocess the CIFAR-10 dataset.
+- Understand convolution operations, padding, and strides.
+- Explore Max Pooling and Average Pooling.
+- Implement LeNet-5 and custom CNN architectures.
+- Understand forward propagation and backpropagation.
+- Train and evaluate CNN models.
+- Apply data augmentation to reduce overfitting.
+- Implement transfer learning using MobileNetV2.
+- Compare different model architectures and their performance.
 
-Training images: 50,000
-Testing images: 10,000
-Image dimensions: 32 × 32 pixels
-Color channels: 3 (RGB)
-Number of classes: 10
-Classes
-Airplane
-Automobile
-Bird
-Cat
-Deer
-Dog
-Frog
-Horse
-Ship
-Truck
+## 📂 Dataset Information
 
-The dataset is loaded directly using TensorFlow/Keras.
+**Dataset:** CIFAR-10
 
-🛠️ Technologies & Libraries Used
-Python
-TensorFlow
-Keras
-NumPy
-Pandas
-Matplotlib
-Seaborn
-SciPy
-Scikit-learn
-Jupyter Notebook / Google Colab
-📚 Project Tasks
-Task A1 – Data Loading, EDA & Preprocessing
-Load the CIFAR-10 dataset.
-Explore dataset dimensions and class distributions.
-Visualize sample images.
-Analyze pixel intensity distributions.
-Normalize image pixel values.
-Perform one-hot encoding of class labels.
-Task A2 – Convolution Operation, Padding & Strides
-Understand the mathematical operation of convolution.
-Implement a manual convolution operation.
-Explore different padding techniques:
-VALID Padding
-SAME Padding
-Understand the effect of strides on output dimensions.
-Visualize convolution outputs and learned feature maps.
-Task A3 – Pooling, Flatten & CNN Architectures
-Understand max pooling and average pooling.
-Visualize feature maps before and after pooling.
-Explore flattening operations.
-Implement LeNet-5 architecture.
-Build a custom CNN architecture using Keras.
-Analyze model summaries and parameter counts.
-Task A4 – Backpropagation in CNN & Training
-Understand forward propagation and backward propagation.
-Train the custom CNN model from scratch.
-Use callbacks such as:
-Early Stopping
-ReduceLROnPlateau
-Monitor training and validation accuracy.
-Evaluate the model on test data.
-Generate confusion matrices and classification reports.
-Visualize incorrectly classified images.
-Task A5 – Data Augmentation
-Understand the importance of data augmentation.
-Apply random image transformations.
-Use Keras ImageDataGenerator.
-Implement augmentation using Keras preprocessing layers.
-Compare model performance with and without augmentation.
-Task A6 – Transfer Learning: Feature Extraction & Fine-Tuning
-Implement transfer learning using MobileNetV2.
-Use ImageNet-pretrained weights.
-Perform feature extraction by freezing the pretrained base model.
-Train a custom classification head.
-Fine-tune the top layers of MobileNetV2.
-Compare feature extraction and fine-tuning performance.
-Demonstrate a residual block architecture.
-🏗️ Models Implemented
+CIFAR-10 is a popular image classification dataset containing 60,000 colour images divided into 10 different categories.
 
-The following six models are implemented and evaluated:
+| Dataset Information | Details |
+|---|---|
+| Total Images | 60,000 |
+| Training Images | 50,000 |
+| Testing Images | 10,000 |
+| Image Dimensions | 32 × 32 |
+| Colour Channels | 3 (RGB) |
+| Number of Classes | 10 |
+| Problem Type | Multiclass Classification |
 
-LeNet-5 – A traditional CNN architecture.
-Custom CNN (Without Augmentation) – CNN trained from scratch.
-Custom CNN + ImageDataGenerator – CNN trained with image augmentation.
-Custom CNN + Keras Augmentation Layers – CNN using preprocessing augmentation layers.
-MobileNetV2 Feature Extraction – Transfer learning with a frozen pretrained backbone.
-MobileNetV2 Fine-Tuning – Transfer learning with selected layers unfrozen for further training.
-📊 Model Performance Comparison
+### CIFAR-10 Classes
 
-The following results are from the notebook's recorded execution:
+1. Airplane
+2. Automobile
+3. Bird
+4. Cat
+5. Deer
+6. Dog
+7. Frog
+8. Horse
+9. Ship
+10. Truck
 
-Model	Test Accuracy
-LeNet-5	53.07%
-Custom CNN (Without Augmentation)	77.88%
-Custom CNN + ImageDataGenerator	85.15%
-Custom CNN + Keras Augmentation	78.98%
-MobileNetV2 Feature Extraction	85.99%
-MobileNetV2 Fine-Tuning	87.00%
+**Dataset Source:** [CIFAR-10 Official Website](https://www.cs.toronto.edu/~kriz/cifar.html)
 
-Best Performing Model: MobileNetV2 Fine-Tuning with a recorded test accuracy of 87.00%.
+The dataset is automatically downloaded using the TensorFlow/Keras dataset API.
 
-📈 Visualizations & Outputs
+## 🛠️ Technologies & Libraries Used
 
-The notebook includes several visualizations and evaluation outputs:
+- **Python** – Programming language
+- **TensorFlow** – Deep Learning framework
+- **Keras** – CNN model implementation
+- **NumPy** – Numerical computations
+- **Pandas** – Data manipulation
+- **Matplotlib** – Data visualization
+- **Seaborn** – Statistical visualization
+- **SciPy** – Convolution operations
+- **Scikit-learn** – Model evaluation
 
-CIFAR-10 sample image grids.
-Class distribution and pixel intensity histograms.
-Convolution operation visualizations.
-Feature map visualizations.
-Max pooling and average pooling comparisons.
-CNN architecture summaries.
-Training and validation accuracy curves.
-Training and validation loss curves.
-Confusion matrix.
-Classification report.
-Misclassified image samples.
-Data augmentation comparisons.
-Transfer learning performance comparison.
-Residual block model summary.
-⚙️ Installation & Setup
-1. Clone the Repository
-bash
-git clone https://github.com/Mant-0957/DeepLearning_PR4.git
+## ⚙️ Project Workflow
 
-2. Navigate to the Project Directory
-bash
-cd DeepLearning_PR4
+### Task A1 – Data Loading, EDA & Preprocessing
 
-3. Install Required Libraries
-bash
-pip install tensorflow scikit-learn scipy pandas numpy matplotlib seaborn
+**Objective:** Understand and prepare the CIFAR-10 dataset for CNN training.
 
-4. Run the Jupyter Notebook
+Activities:
+- Load the CIFAR-10 dataset.
+- Examine training and testing dataset shapes.
+- Display sample images from all 10 classes.
+- Perform exploratory data analysis (EDA).
+- Visualize image pixel distributions.
+- Normalize pixel values from 0–255 to 0–1.
+- Convert target labels into one-hot encoded format.
 
-Open the notebook:
+**Expected Outputs:**
+- Dataset information and shapes.
+- 5 × 10 image visualization grid.
+- Pixel distribution histograms.
+- Preprocessed image and label information.
 
-DL_PR4A (1).ipynb
+### Task A2 – Convolution Operation, Padding & Strides
 
-You can run it using Jupyter Notebook or Google Colab.
+**Objective:** Understand how convolution extracts important features from images.
 
-Google Colab: Upload the notebook to Google Colab and execute the cells sequentially.
+Activities:
+- Perform manual 2D convolution.
+- Understand convolution filters and kernels.
+- Explore VALID and SAME padding.
+- Compare different stride values.
+- Understand convolution output dimensions.
+- Visualize learned Conv2D feature maps.
 
-🔍 Key Learnings
+**Key Concepts:**
+- Convolution
+- Filters and Kernels
+- Padding
+- Strides
+- Feature Extraction
+- Feature Maps
 
-Through this practical, the following concepts are explored:
+**Expected Outputs:**
+- Manual convolution results.
+- Output shape comparisons.
+- 4 × 4 feature-map visualization.
 
-Working with image datasets.
-Understanding convolution and feature extraction.
-Designing CNN architectures.
-Understanding pooling and dimensionality reduction.
-Training neural networks using backpropagation.
-Improving generalization through data augmentation.
-Applying pretrained models through transfer learning.
-Fine-tuning deep learning models.
-Evaluating classification performance using different metrics.
-📁 Repository Structure
-text
+### Task A3 – Pooling, Flatten & CNN Architectures
+
+**Objective:** Understand pooling operations and build CNN architectures.
+
+Activities:
+- Implement Max Pooling.
+- Implement Average Pooling.
+- Compare feature maps before and after pooling.
+- Understand Flatten operations.
+- Calculate model parameters.
+- Implement LeNet-5 architecture.
+- Build a modern custom CNN architecture.
+
+**Key Concepts:**
+- Max Pooling
+- Average Pooling
+- Flatten Layer
+- Fully Connected Layers
+- LeNet-5
+- Custom CNN
+
+**Expected Outputs:**
+- Pooling comparison visualizations.
+- Tensor shape information.
+- CNN model summaries.
+- Parameter comparisons.
+
+### Task A4 – Backpropagation in CNN & Training
+
+**Objective:** Train CNN models and understand how backpropagation updates network parameters.
+
+Activities:
+- Understand forward propagation.
+- Understand backward propagation.
+- Calculate gradients during training.
+- Train the custom CNN model.
+- Apply Early Stopping.
+- Use ReduceLROnPlateau.
+- Evaluate the trained model.
+
+**Model Evaluation:**
+- Training accuracy.
+- Validation accuracy.
+- Training loss.
+- Validation loss.
+- Test accuracy.
+- Classification report.
+- Confusion matrix.
+- Misclassified image visualization.
+
+**Expected Outputs:**
+- Training and validation curves.
+- Test performance metrics.
+- Confusion matrix.
+- Visualization of incorrectly classified images.
+
+### Task A5 – Data Augmentation
+
+**Objective:** Improve model generalization and reduce overfitting using image augmentation techniques.
+
+Activities:
+- Understand the importance of data augmentation.
+- Apply random image transformations.
+- Perform image shifting.
+- Apply rotation and zoom.
+- Use horizontal flipping.
+- Implement ImageDataGenerator.
+- Implement Keras preprocessing augmentation layers.
+- Compare augmented and non-augmented models.
+
+**Key Concepts:**
+- Image Augmentation
+- Random Rotation
+- Width and Height Shifting
+- Zooming
+- Horizontal Flipping
+- Regularization
+
+**Expected Outputs:**
+- Augmented image visualization grid.
+- Training performance comparison.
+- Test accuracy comparison.
+
+### Task A6 – Transfer Learning: Feature Extraction & Fine-Tuning
+
+**Objective:** Use a pretrained MobileNetV2 model to improve image classification performance.
+
+Activities:
+- Understand transfer learning.
+- Load ImageNet-pretrained MobileNetV2.
+- Resize CIFAR-10 images for MobileNetV2.
+- Freeze the pretrained base model.
+- Perform feature extraction.
+- Train a custom classification head.
+- Fine-tune the top 30 layers.
+- Use a low learning rate during fine-tuning.
+- Compare transfer learning with scratch CNN models.
+
+**Key Concepts:**
+- Transfer Learning
+- MobileNetV2
+- ImageNet Weights
+- Feature Extraction
+- Fine-Tuning
+- Frozen Layers
+- Trainable and Non-Trainable Parameters
+
+**Expected Outputs:**
+- Model parameter summaries.
+- Feature extraction training curves.
+- Fine-tuning training curves.
+- Six-model performance comparison.
+- Residual block implementation.
+
+## 🧠 CNN Architecture
+
+The project explores multiple CNN architectures:
+
+1. LeNet-5
+2. Custom CNN
+3. CNN with Data Augmentation
+4. CNN with Keras Augmentation Layers
+5. MobileNetV2 Feature Extraction
+6. MobileNetV2 Fine-Tuning
+
+The models are evaluated to understand the benefits of different CNN architectures and training techniques.
+
+## 📊 Model Evaluation Metrics
+
+The following evaluation methods are used:
+
+| Metric | Purpose |
+|---|---|
+| Accuracy | Measures overall correct predictions |
+| Loss | Measures prediction error |
+| Precision | Measures correctness of positive predictions |
+| Recall | Measures the ability to identify actual positives |
+| F1-Score | Balances precision and recall |
+| Confusion Matrix | Compares actual and predicted classes |
+
+Additional visualizations include:
+- Training and validation accuracy graphs.
+- Training and validation loss graphs.
+- Confusion matrix.
+- Misclassified image samples.
+- Model performance comparison table.
+
+
+## 📁 Project Structure
+
+```text
 DeepLearning_PR4/
 │
 ├── DL_PR4A (1).ipynb
+│   └── Complete CNN implementation
 │
 └── README.md
+    └── Project documentation
+```
 
-🏁 Conclusion
+**Note:** CIFAR-10 is downloaded automatically through TensorFlow/Keras, so a separate dataset file is not required.
 
-This practical demonstrates the complete workflow of image classification using Convolutional Neural Networks, starting from dataset preprocessing and exploratory data analysis to model training, evaluation, data augmentation, and transfer learning.
+## 📚 Key Learning Outcomes
 
-Different CNN architectures were implemented and compared to understand their performance and effectiveness.
+After completing this practical, I gained hands-on experience with:
 
-The experiments demonstrate that transfer learning with MobileNetV2 fine-tuning achieved the best recorded test accuracy of 87.00%, outperforming the other evaluated models.
+- Deep Learning fundamentals.
+- Convolutional Neural Networks.
+- Image preprocessing and normalization.
+- Convolution operations and feature extraction.
+- Padding and stride calculations.
+- Pooling and Flatten layers.
+- CNN architecture development.
+- LeNet-5 implementation.
+- Forward and backward propagation.
+- Model training and optimization.
+- Data augmentation techniques.
+- Transfer learning using MobileNetV2.
+- Feature extraction and fine-tuning.
+- Model evaluation and visualization.
 
-Overall, this project provides practical experience with modern deep learning techniques and their applications in computer vision.
+## 👨‍💻 Author
 
-👨‍💻 Author
+**Mant Sherasiya**
 
-GitHub: Mant-0957
+- GitHub: [Mant-0957](https://github.com/Mant-0957)
+- Repository: [DeepLearning_PR4](https://github.com/Mant-0957/DeepLearning_PR4)
+- Notebook: [DL_PR4A (1).ipynb](https://github.com/Mant-0957/DeepLearning_PR4/blob/main/DL_PR4A%20%281%29.ipynb)
 
-Repository: DeepLearning_PR4
-
-Project: Deep Learning Practical Report 4
+---
