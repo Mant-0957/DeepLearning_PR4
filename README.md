@@ -98,4 +98,106 @@ Train a custom classification head.
 Fine-tune the top layers of MobileNetV2.
 Compare feature extraction and fine-tuning performance.
 Demonstrate a residual block architecture.
-🏗
+🏗️ Models Implemented
+
+The following six models are implemented and evaluated:
+
+LeNet-5 – A traditional CNN architecture.
+Custom CNN (Without Augmentation) – CNN trained from scratch.
+Custom CNN + ImageDataGenerator – CNN trained with image augmentation.
+Custom CNN + Keras Augmentation Layers – CNN using preprocessing augmentation layers.
+MobileNetV2 Feature Extraction – Transfer learning with a frozen pretrained backbone.
+MobileNetV2 Fine-Tuning – Transfer learning with selected layers unfrozen for further training.
+📊 Model Performance Comparison
+
+The following results are from the notebook's recorded execution:
+
+Model	Test Accuracy
+LeNet-5	53.07%
+Custom CNN (Without Augmentation)	77.88%
+Custom CNN + ImageDataGenerator	85.15%
+Custom CNN + Keras Augmentation	78.98%
+MobileNetV2 Feature Extraction	85.99%
+MobileNetV2 Fine-Tuning	87.00%
+
+Best Performing Model: MobileNetV2 Fine-Tuning with a recorded test accuracy of 87.00%.
+
+📈 Visualizations & Outputs
+
+The notebook includes several visualizations and evaluation outputs:
+
+CIFAR-10 sample image grids.
+Class distribution and pixel intensity histograms.
+Convolution operation visualizations.
+Feature map visualizations.
+Max pooling and average pooling comparisons.
+CNN architecture summaries.
+Training and validation accuracy curves.
+Training and validation loss curves.
+Confusion matrix.
+Classification report.
+Misclassified image samples.
+Data augmentation comparisons.
+Transfer learning performance comparison.
+Residual block model summary.
+⚙️ Installation & Setup
+1. Clone the Repository
+bash
+git clone https://github.com/Mant-0957/DeepLearning_PR4.git
+
+2. Navigate to the Project Directory
+bash
+cd DeepLearning_PR4
+
+3. Install Required Libraries
+bash
+pip install tensorflow scikit-learn scipy pandas numpy matplotlib seaborn
+
+4. Run the Jupyter Notebook
+
+Open the notebook:
+
+DL_PR4A (1).ipynb
+
+You can run it using Jupyter Notebook or Google Colab.
+
+Google Colab: Upload the notebook to Google Colab and execute the cells sequentially.
+
+🔍 Key Learnings
+
+Through this practical, the following concepts are explored:
+
+Working with image datasets.
+Understanding convolution and feature extraction.
+Designing CNN architectures.
+Understanding pooling and dimensionality reduction.
+Training neural networks using backpropagation.
+Improving generalization through data augmentation.
+Applying pretrained models through transfer learning.
+Fine-tuning deep learning models.
+Evaluating classification performance using different metrics.
+📁 Repository Structure
+text
+DeepLearning_PR4/
+│
+├── DL_PR4A (1).ipynb
+│
+└── README.md
+
+🏁 Conclusion
+
+This practical demonstrates the complete workflow of image classification using Convolutional Neural Networks, starting from dataset preprocessing and exploratory data analysis to model training, evaluation, data augmentation, and transfer learning.
+
+Different CNN architectures were implemented and compared to understand their performance and effectiveness.
+
+The experiments demonstrate that transfer learning with MobileNetV2 fine-tuning achieved the best recorded test accuracy of 87.00%, outperforming the other evaluated models.
+
+Overall, this project provides practical experience with modern deep learning techniques and their applications in computer vision.
+
+👨‍💻 Author
+
+GitHub: Mant-0957
+
+Repository: DeepLearning_PR4
+
+Project: Deep Learning Practical Report 4
